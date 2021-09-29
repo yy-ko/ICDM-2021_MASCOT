@@ -8,7 +8,9 @@ This project is written in standard C++ and CUDA 10.2. it can be built by runnin
 
 ## Run
 Run executable file by:  
-  ```./quantized_mf -i [train file] -y [test file] -o [output file] [options]```  
+  ```
+  ./quantized_mf -i [train file] -y [test file] -o [output file] [options]
+  ```  
 
 
 Where options are as follows:    
@@ -34,8 +36,8 @@ Other parameter settings are described in the paper.
 ## Datasets
 
 In our experiments, we used four real-world datasets for training and testing.  
-In the case of ML10M([link](https://grouplens.org/datasets/movielens/10m/)) and ML25M([link](https://grouplens.org/datasets/movielens/25m/)), we divide the training and test set 8:2 for 5-cross validation.  
-For Netflix([link](https://academictorrents.com/details/9b13183dc4d60676b773c9e2cd6de5e5542cee9a)) and Yahoo!Music([link](https://webscope.sandbox.yahoo.com/catalog.php?datatype=c&did=48)), we just use the provided training and test sets.  
+In the case of [ML10M](https://grouplens.org/datasets/movielens/10m/) and [ML25M](https://grouplens.org/datasets/movielens/25m/), we divide the training and test set 8:2 for 5-cross validation.  
+For [Netflix](https://academictorrents.com/details/9b13183dc4d60676b773c9e2cd6de5e5542cee9a) and [Yahoo!Music](https://webscope.sandbox.yahoo.com/catalog.php?datatype=c&did=48), we just use the provided training and test sets.  
 
 
 
@@ -44,9 +46,11 @@ For Netflix([link](https://academictorrents.com/details/9b13183dc4d60676b773c9e2
 
 ## Test
 
-We provide pre-trained model([link](https://figshare.com/s/9a54e7389d491688e0cc)) and you can test it as follows:  
+We provide pre-trained models ([.zip](https://figshare.com/s/9a54e7389d491688e0cc)) and you can test it as follows:  
 
-  ```./test_mf -i [pre-trained model file] -y [test file] -v [mf version]```  
+  ```
+  ./test_mf -i [pre-trained model file] -y [test file] -v [mf version]
+  ```  
 
 ## Experimental results  
 First, We compare MASCOT and three state-of-the-art quantization methods in terms of training time and the model error. **(RQ1~2)**  
@@ -105,38 +109,62 @@ You can produce those result using following commands :
 
 RQ 1~2 :  
   - MASCOT  
-    ```./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e 20 -s 0.05 -it 2 -v 1```  
+    ```
+    ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e 20 -s 0.05 -it 2 -v 1
+    ```  
   - MPT  
-    ```./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -v 4```  
+    ```
+    ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -v 4
+    ```  
   - MuPPET  
-    ```./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -s 0.05 -v 3```  
+    ```
+    ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -s 0.05 -v 3
+    ```  
   - AFP  
-    ```./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -v 2```  
+    ```
+    ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -v 2
+    ```  
   - FP32  
-    ```./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -v 5```  
+    ```
+    ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -v 5
+    ```  
 
 
 RQ 3:  
   - Strategies of MASCOT  
     - FP32  
-    ```./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -v 5```  
+    ```
+    ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -v 5
+    ```  
     - MASCOT-N1  
-    ```./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -v 7```  
+    ```
+    ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -v 7
+    ```  
     - MASCOT-N2  
-    ```./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e [values] -s 0.05 -it 4 -v 8```  
+    ```
+    ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e [values] -s 0.05 -it 4 -v 8
+    ```  
 	    - The optimal error threshold (ML10M, ML25M, Netflix, Yahoo!Music) :  10, 12.5, 1.35, 20
     - MASCOT  
-    ```./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e 20 -s 0.05 -it 2 -v 1```  
+    ```
+    ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e 20 -s 0.05 -it 2 -v 1
+    ```  
 
 
   - Optimization technique  
     - MASCOT-naive  
-      ```./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e 20 -s 0.05 -it 2 -v 6```
+      ```
+      ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e 20 -s 0.05 -it 2 -v 6
+      ```
     - MASCOT-opt  
-      ```./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e 20 -s 0.05 -it 2 -v 1```
+      ```
+      ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e 20 -s 0.05 -it 2 -v 1
+      ```
 
 RQ 4:  
   - Sampling ratio, error estimate period, # of groups  
 	  - MASCOT  
-    ```./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e [values] -s [values] -it 2 -v 1```  
+    ```
+    ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e [values] -s [values] -it 2 -v 1
+    ```  
 
