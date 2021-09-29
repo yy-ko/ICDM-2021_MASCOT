@@ -143,8 +143,7 @@ RQ 3:
     - MASCOT-N2  
     ```
     ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e [values] -s 0.05 -it 4 -v 8
-    ```  
-	    - The optimal error threshold (ML10M, ML25M, Netflix, Yahoo!Music) :  10, 12.5, 1.35, 20
+    ```- The optimal error threshold (ML10M, ML25M, Netflix, Yahoo!Music) :  10, 12.5, 1.35, 20
     - MASCOT  
     ```
     ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e 20 -s 0.05 -it 2 -v 1
