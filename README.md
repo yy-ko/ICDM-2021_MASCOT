@@ -1,7 +1,7 @@
 ## MASCOT: A Quantization Framework for Efficient Matrix Factorization in Recommender Systems
 
 This repository provides a reference implementation of *MASCOT* as described in the following paper:
-> MASCOT: A Quantization Framework for Efficient Matrix Factorization in Recommender Systems
+> MASCOT: A Quantization Framework for Efficient Matrix Factorization in Recommender Systems<br>
 > Yunyong Ko, Jae-Seo Yu, Hong-Kyun Bae, Yongjun Park, Dongwon Lee, and Sang-Wook Kim<br>
 > IEEE International Conference on Data Mining (IEEE ICDM 2021)<br>
 
