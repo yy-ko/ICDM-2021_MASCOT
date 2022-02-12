@@ -1,13 +1,13 @@
-# MASCOT: A Quantization Framework for Efficient Matrix Factorization in Recommender Systems
+## MASCOT: A Quantization Framework for Efficient Matrix Factorization in Recommender Systems
 This repository provides a reference implementation of *MASCOT* as described in the following paper:
 > ASiNE: Adversarial Signed Network Embedding<br>
 > Yunyong Ko, Jae-Seo Yu, Hong-Kyun Bae, Yongjun Park, Dongwon Lee, and Sang-Wook Kim<br>
 > IEEE International Conference on Data Mining (IEEE ICDM 2021)<br>
 
-## Building
+### Building
 This project is written in standard C++ and CUDA 10.2. it can be built by running Makefile in the source code directory.
 
-## Usage
+### Usage
 Run executable file by:  
   ```
   ./quantized_mf -i [train file] -y [test file] -o [output file] [options]
@@ -33,7 +33,7 @@ It is recommended to tune the number of threads using -wg options to maximize th
 We used an RTX 2070 GPU for our experiments and set the number of warps to 2,048 (k = 128), 2,304 (k = 64)  
 Other parameter settings are described in the paper.  
 
-## Datasets
+### Datasets
 
 In our experiments, we used four real-world datasets for training and testing.  
 In the case of [ML10M](https://grouplens.org/datasets/movielens/10m/) and [ML25M](https://grouplens.org/datasets/movielens/25m/), we divide the training and test set 8:2 for 5-cross validation.  
@@ -43,7 +43,7 @@ For [Netflix](https://academictorrents.com/details/9b13183dc4d60676b773c9e2cd6de
 <img src="https://github.com/Yujaeseo/MASCOT/blob/main/Figure/datasets.png" width="490" height="180">  
 
 
-## Test Pre-trained Models
+### Test Pre-trained Models
 
 We provide pre-trained models ([.zip](https://figshare.com/s/9a54e7389d491688e0cc)) and you can test it as follows:  
 
@@ -51,7 +51,7 @@ We provide pre-trained models ([.zip](https://figshare.com/s/9a54e7389d491688e0c
   ./test_mf -i [pre-trained model file] -y [test file] -v [mf version]
   ```  
 
-## Experimental results  
+### Experimental results  
 First, We compare MASCOT and three state-of-the-art quantization methods in terms of training time and the model error. **(RQ1~2)**  
 Existing quantization methods are as follows :
   - [[ICLR '18](https://arxiv.org/abs/1710.03740)] Mixed Precision Training (MPT)
@@ -167,7 +167,7 @@ RQ 4:
     ```  
     
 
-## Citation
+### Citation
 Please cite our paper if you have used the code in your work. You can use the following BibTex citation:
 ```
 @inproceedings{ko2021mascot,
