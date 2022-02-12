@@ -3,15 +3,21 @@
 In recent years, quantization methods have successfully accelerated the training of large DNN models by reducing the level of precision in computing operations (e.g., forward/backward passes) without sacrificing its accuracy. In this work, therefore, we attempt to apply such a quantization idea to the popular Matrix factorization (MF) methods to deal with  the growing scale of models and datasets in recommender systems. However, to our dismay, we observe that the state-of-the-art quantization methods are not effective in the training of MF models, unlike their successes in the training of DNN models. To this phenomenon, we posit that two 
 distinctive features in training MF models could explain the difference: (i) training MF models is much more memory-intensive than training DNN models, and (ii) the quantization errors across users and items in recommendation are not uniform. From these observations, then, we develop a novel quantization framework for MF models, named as MASCOT, employing novel strategies to successfully address two aforementioned unique features in the training of MF models. The comprehensive evaluation using four real-world datasets demonstrates that MASCOT improves the training performance of MF models by about 45%, compared to the training without quantization, while maintaining low model errors, and the strategies and implementation optimizations of MASCOT are quite effective in the training of MF models.
 
+
+# MASCOT: A Quantization Framework for Efficient Matrix Factorization in Recommender Systems
+This repository provides a reference implementation of *MASCOT* as described in the following paper:
+> ASiNE: Adversarial Signed Network Embedding<br>
+> Yunyong Ko, Jae-Seo Yu, Hong-Kyun Bae, Yongjun Park, Dongwon Lee, and Sang-Wook Kim<br>
+> IEEE International Conference on Data Mining (IEEE ICDM 2021)<br>
+
 ## Building
 This project is written in standard C++ and CUDA 10.2. it can be built by running Makefile in the source code directory.
 
-## Run
+## Usage
 Run executable file by:  
   ```
   ./quantized_mf -i [train file] -y [test file] -o [output file] [options]
   ```  
-
 
 Where options are as follows:    
   > -l  : The number of epochs executed during training  
@@ -40,11 +46,10 @@ In the case of [ML10M](https://grouplens.org/datasets/movielens/10m/) and [ML25M
 For [Netflix](https://academictorrents.com/details/9b13183dc4d60676b773c9e2cd6de5e5542cee9a) and [Yahoo!Music](https://webscope.sandbox.yahoo.com/catalog.php?datatype=c&did=48), we just use the provided training and test sets.  
 
 
-
 <img src="https://github.com/Yujaeseo/MASCOT/blob/main/Figure/datasets.png" width="490" height="180">  
 
 
-## Test
+## Test Pre-trained Models
 
 We provide pre-trained models ([.zip](https://figshare.com/s/9a54e7389d491688e0cc)) and you can test it as follows:  
 
@@ -166,4 +171,18 @@ RQ 4:
     ```
     ./quantized_mf -i [train file] -y [test file] -o [output file] -wg 2048 -bl 128 -k 128 -l 50 -a 0.01 -d 0.1 -ug 100 -ig 100 -e [values] -s [values] -it 2 -v 1
     ```  
+    
+
+## Citation
+Please cite our paper if you have used the code in your work. You can use the following BibTex citation:
+```
+@inproceedings{ko2021mascot,
+  title={MASCOT: A Quantization Framework for Efficient Matrix Factorization in Recommender Systems},
+  author={Ko, Yunyong and Yu, Jae-Seo and Bae, Hong-Kyun and Park, Yongjun and Lee, Dongwon and Kim, Sang-Wook},
+  booktitle={2021 IEEE International Conference on Data Mining (ICDM)},
+  pages={290--299},
+  year={2021},
+  organization={IEEE}
+}
+```
 
