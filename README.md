@@ -1,8 +1,9 @@
 ## MASCOT: A Quantization Framework for Efficient Matrix Factorization in Recommender Systems
-This repository provides a reference implementation of *MASCOT* as described in the following paper:
-> ASiNE: Adversarial Signed Network Embedding<br>
 > Yunyong Ko, Jae-Seo Yu, Hong-Kyun Bae, Yongjun Park, Dongwon Lee, and Sang-Wook Kim<br>
 > IEEE International Conference on Data Mining (IEEE ICDM 2021)<br>
+
+This repository provides a reference implementation of *MASCOT* as described in the following paper:
+
 
 ### Building
 This project is written in standard C++ and CUDA 10.2. it can be built by running Makefile in the source code directory.
