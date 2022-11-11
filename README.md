@@ -173,7 +173,7 @@ Please cite our paper if you have used the code in your work. You can use the fo
 @inproceedings{ko2021mascot,
   title={MASCOT: A Quantization Framework for Efficient Matrix Factorization in Recommender Systems},
   author={Ko, Yunyong and Yu, Jae-Seo and Bae, Hong-Kyun and Park, Yongjun and Lee, Dongwon and Kim, Sang-Wook},
-  booktitle={2021 IEEE International Conference on Data Mining (ICDM)},
+  booktitle={Proceedings of the 2021 IEEE International Conference on Data Mining (ICDM)},
   pages={290--299},
   year={2021},
   organization={IEEE}
