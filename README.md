@@ -1,4 +1,4 @@
-## [ICDM'21] MASCOT: A Quantization Framework for Efficient Matrix Factorization in Recommender Systems
+# [ICDM'21] MASCOT: A Quantization Framework for Efficient Matrix Factorization in Recommender Systems
 
 This repository provides a reference implementation of *MASCOT* as described in the following paper:
 > MASCOT: A Quantization Framework for Efficient Matrix Factorization in Recommender Systems<br>
